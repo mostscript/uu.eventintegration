@@ -1,0 +1,29 @@
+plone.app.event.ploneintegration Installation
+---------------------------------------------
+
+To install plone.app.event.ploneintegration into the global Python environment (or a workingenv),
+using a traditional Zope 2 instance, you can do this:
+
+* When you're reading this you have probably already run 
+  ``easy_install plone.app.event.ploneintegration``. Find out how to install setuptools
+  (and EasyInstall) here:
+  http://peak.telecommunity.com/DevCenter/EasyInstall
+
+
+Alternatively, if you are using zc.buildout and the plone.recipe.zope2instance
+recipe to manage your project, you can do this:
+
+* Add ``plone.app.event.ploneintegration`` to the list of eggs to install, e.g.:
+
+    [buildout]
+    ...
+    eggs =
+        ...
+        plone.app.event.ploneintegration
+       
+* Re-run buildout, e.g. with:
+
+    $ ./bin/buildout
+        
+You can skip the ZCML slug if you are going to explicitly include the package
+from another package's configure.zcml file.
