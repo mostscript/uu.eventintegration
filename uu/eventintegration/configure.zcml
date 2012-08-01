@@ -3,6 +3,7 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:zcml="http://namespaces.zope.org/zcml"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="uu.eventintegration">
   
   <includeOverrides file="overrides.zcml" />
@@ -28,5 +29,10 @@
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+
+  <browser:resource
+    name="eventcustom.css"
+    file="eventcustom.css"
+    />
 
 </configure>
