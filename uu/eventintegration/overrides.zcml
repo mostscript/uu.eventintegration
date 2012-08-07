@@ -9,6 +9,7 @@
 
   <include package="z3c.unconfigure" file="meta.zcml"/>
   <unconfigure>
+    <!--
     <plone:portlet
         name="portlets.Calendar"
         interface="plone.app.portlets.portlets.calendar.ICalendarPortlet"
@@ -24,6 +25,7 @@
         addview="plone.app.portlets.portlets.events.AddForm"
         editview="plone.app.portlets.portlets.events.EditForm"
         />
+    -->
     <browser:page
         for="Products.ATContentTypes.interfaces.IATTopic"
         name="ics_view"
