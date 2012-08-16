@@ -3,6 +3,7 @@
   <version>1</version>
   <dependencies>
     <dependency>profile-uu.eventintegration:prepare</dependency>
+    <dependency>profile-plone.app.event:default</dependency>
     <dependency>profile-plone.app.event.dx:default</dependency>
   </dependencies>
 </metadata>
