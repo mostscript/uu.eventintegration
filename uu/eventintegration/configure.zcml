@@ -30,6 +30,13 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <browser:page
+    name="SFLight_plone.app.event.dx.event_view"
+    for="plone.event.interfaces.IEvent"
+    template="fullcalendar_event_view.pt"
+    permission="zope2.View"
+    />
+
   <browser:resource
     name="eventcustom.css"
     file="eventcustom.css"
