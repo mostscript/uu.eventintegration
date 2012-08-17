@@ -33,6 +33,7 @@
   <browser:page
     name="SFLight_plone.app.event.dx.event_view"
     for="plone.event.interfaces.IEvent"
+    class="plone.app.event.browser.event_view.EventView"
     template="fullcalendar_event_view.pt"
     permission="zope2.View"
     />
