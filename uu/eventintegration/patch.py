@@ -1,18 +1,20 @@
-from datetime import datetime
+from datetime import datetime, date
 from DateTime import DateTime
 from Products.CMFPlone import i18nl10n
 from Products.CMFPlone.i18nl10n import ulocalized_time as orig_ulocalized_time
 
 
 def DT2dt(v):
-    tz = dt.tzinfo
     dt = v
     if isinstance(v, date):
         dt = datetime(*v.timetuple()[:3])
-    if isinstance(v, DateTime):
+    elif isinstance(v, DateTime):
         dt = v.asdatetime()
+        tz = dt.tzinfo
         if not tz:
             return dt
+    else:
+        tz = dt.tzinfo
     return tz.localize(datetime(*dt.timetuple()[:7]))
 
 _strftime = lambda v, fmt: DT2dt(v).strftime(fmt)
@@ -26,7 +28,7 @@ class PatchedDateTime(DateTime):
 
 def new_ulocalized_time(time, *args, **kwargs):
     wrapped_time = PatchedDateTime(time)
-    return orig_ulocalized_time(time, *args, **kwargs)
+    return orig_ulocalized_time(wrapped_time, *args, **kwargs)
 
 
 def patch_ulocalized_time():
