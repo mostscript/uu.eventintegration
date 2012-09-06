@@ -83,7 +83,11 @@ def migrate_events(site):
     events = [b._unrestrictedGetObject() for b in result]
     for event in events:
         migrate_event(event, site)
-
+    import transaction
+    txn = transaction.get()
+    txn.note('/'.join(site.getPhysicalPath()))
+    txn.note('Migrated events')
+    txn.commit()
 
 def main(app):
     for sitename in SITES:
