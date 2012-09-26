@@ -24,7 +24,10 @@ setup(name='uu.eventintegration',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'plone.dexterity',
+          'plone.directives.form',
           'plone.app.event[dexterity]',
+          'Solgema.fullcalendar',
           'z3c.unconfigure',
       ],
       entry_points="""

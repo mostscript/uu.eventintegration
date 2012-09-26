@@ -33,6 +33,7 @@
   <browser:resource
     name="eventcustom.css"
     file="eventcustom.css"
+    layer="uu.eventintegration.interfaces.IUUEventIntegrationLayer"
     />
 
 </configure>

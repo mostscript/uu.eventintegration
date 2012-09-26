@@ -1,0 +1,3 @@
+<object name="portal_types">
+  <object name="uu.eventintegration.calendar" meta_type="Dexterity FTI" />
+</object>
