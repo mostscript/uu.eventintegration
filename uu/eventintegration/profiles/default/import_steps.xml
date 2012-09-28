@@ -1,0 +1,7 @@
+<import-steps>
+  <import-step id="uu.eventintegration-fixups"
+    handler="uu.eventintegration.setuphandlers.install_fixups"
+    title="uu.eventintegration install fixups" version="1">
+    <dependency step="plone-final"/>
+  </import-step>
+</import-steps>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<object name="plone.app.event.dx.event"
+        meta_type="Dexterity FTI"
+        i18n:domain="plone"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+  <!-- override default FTI title from plone.app.event.dx.event FTI -->
+  <property name="title" i18n:translate="">Calendar Event</property>
+  <!-- hide plone.app.event.dx.event type from folders other than calendar -->
+  <property name="global_allow">False</property>
+</object>

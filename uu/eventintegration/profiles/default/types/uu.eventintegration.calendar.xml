@@ -7,12 +7,13 @@
   <!-- Basic metadata -->
   <property name="title" i18n:translate="">Calendar</property>
   <property name="description" i18n:translate="">An event calendar folder, preconfigured with sensible defaults.</property>
-  <property name="content_icon">event_icon.png</property>
+  <property name="content_icon">++resource++mini-calendar.gif</property>
   <property name="allow_discussion">False</property>
-  <property name="global_allow">False</property>
+  <property name="global_allow">True</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
     <element value="plone.app.event.dx.event" /> 
+    <element value="uu.eventintegration.calendar" />  <!-- allow calendar nesting -->
     <element value="Topic" />
   </property>
   
@@ -20,15 +21,16 @@
   <property name="schema">uu.eventintegration.interfaces.IEventCalendar</property> 
   
   <!-- class used for content items -->
-  <property name="klass">uu.eventintegration.calendar.EventCalendar</property>
+  <property name="klass">uu.eventintegration.content.EventCalendar</property>
   
   <!-- add permission -->
   <property name="add_permission">cmf.AddPortalContent</property>
   
   <!-- enabled behaviors -->
   <property name="behaviors">
-    <element value="plone.app.content.interfaces.INameFromTitle" />
+    <element value="plone.app.dexterity.behaviors.metadata.IBasic" />
     <element value="plone.app.dexterity.behaviors.metadata.ICategorization" />
+    <element value="plone.app.content.interfaces.INameFromTitle" />
     <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
   </property>
   
@@ -43,7 +45,7 @@
   <alias from="(Default)" to="(dynamic view)"/>
   <alias from="edit" to="@@edit"/>
   <alias from="sharing" to="@@sharing"/>
-  <alias from="view" to="(selected layout)"/>
+  <alias from="view" to="(dynamic view)"/>
  
   <!-- Actions -->
   <action title="View" action_id="view" category="object" condition_expr=""

@@ -30,9 +30,25 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <!-- subscriber for calendar -->
+
+  <subscriber
+    for=".interfaces.IEventCalendar
+         zope.app.container.interfaces.IObjectAddedEvent"
+    handler=".content.on_calendar_create"
+    />
+
+  <!-- browser resource(s) -->
+
   <browser:resource
     name="eventcustom.css"
     file="eventcustom.css"
+    layer="uu.eventintegration.interfaces.IUUEventIntegrationLayer"
+    />
+
+  <browser:resource
+    name="mini-calendar.gif"
+    file="mini-calendar.gif"
     layer="uu.eventintegration.interfaces.IUUEventIntegrationLayer"
     />
 
