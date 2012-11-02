@@ -5,4 +5,5 @@ def initialize(context):
     # apply monkey patches
     patch.patch_widget()
     patch.patch_ulocalized_time()
+    patch.patch_atct_topic_date_indices()
 
