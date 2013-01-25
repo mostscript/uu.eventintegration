@@ -38,6 +38,10 @@
     handler=".content.on_calendar_create"
     />
 
+  <!-- adapters for IEventCalendar -->
+
+  <adapter factory=".adapters.criteria_items_proxy" /> <!-- multi-adapter w/req -->
+
   <!-- browser resource(s) -->
 
   <browser:resource
