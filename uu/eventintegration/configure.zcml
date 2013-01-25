@@ -38,9 +38,10 @@
     handler=".content.on_calendar_create"
     />
 
-  <!-- adapters for IEventCalendar -->
+  <!-- Solgema.fullcalendar integration adapters for IEventCalendar -->
 
-  <adapter factory=".adapters.criteria_items_proxy" /> <!-- multi-adapter w/req -->
+  <adapter factory=".adapters.criteria_items_proxy" /> <!-- multi-adapt w/req -->
+  <adapter factory=".adapters.fullcalendar_properties_proxy" />
 
   <!-- browser resource(s) -->
 
