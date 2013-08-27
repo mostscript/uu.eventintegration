@@ -34,7 +34,7 @@
 
   <subscriber
     for=".interfaces.IEventCalendar
-         zope.app.container.interfaces.IObjectAddedEvent"
+         zope.lifecycleevent.interfaces.IObjectAddedEvent"
     handler=".content.on_calendar_create"
     />
 
