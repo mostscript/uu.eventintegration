@@ -44,9 +44,19 @@ def patch_widget():
 def patch_atct_topic_date_indices():
     from Products.ATContentTypes import criteria
     if 'DateRecurringIndex' not in criteria.DATE_INDICES:
-        criteria.DATE_INDICES = tuple(list(criteria.DATE_INDICES)+['DateRecurringIndex'])
-        criteria.registerCriterion(criteria.date.ATDateCriteria, criteria.DATE_INDICES)
+        criteria.DATE_INDICES = tuple(
+            list(criteria.DATE_INDICES) + ['DateRecurringIndex']
+            )
+        criteria.registerCriterion(
+            criteria.date.ATDateCriteria,
+            criteria.DATE_INDICES,
+            )
     if 'DateRecurringIndex' not in criteria.SORT_INDICES:
-        criteria.SORT_INDICES = tuple(list(criteria.SORT_INDICES)+['DateRecurringIndex'])
-        criteria.registerCriterion(criteria.sort.ATSortCriterion, criteria.SORT_INDICES)
+        criteria.SORT_INDICES = tuple(
+            list(criteria.SORT_INDICES) + ['DateRecurringIndex']
+            )
+        criteria.registerCriterion(
+            criteria.sort.ATSortCriterion,
+            criteria.SORT_INDICES,
+            )
 

@@ -4,6 +4,7 @@ def hide_stock_plone_event(site):
     fti = tt.getTypeInfo('Event')
     fti.global_allow = False
 
+
 def replace_stock_site_events_folder(site):
     if 'events' not in site.contentIds():
         return

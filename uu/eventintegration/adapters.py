@@ -8,6 +8,7 @@ from Solgema.fullcalendar.interfaces import ISolgemaFullcalendarProperties
 
 from uu.eventintegration.interfaces import IEventCalendar
 
+
 def default_page(context):
     item_id = context.getDefaultPage()
     if not item_id:

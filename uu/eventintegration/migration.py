@@ -2,7 +2,8 @@ from plone.event.utils import utc
 from plone.app.event.interfaces import IEventSettings
 from plone.app.event.dx import behaviors
 from plone.memoize import ram
-from plone.app.linkintegrity.exceptions import LinkIntegrityNotificationException
+from plone.app.linkintegrity.exceptions import \
+    LinkIntegrityNotificationException
 from plone.app.textfield.value import RichTextValue
 from plone.registry.interfaces import IRegistry
 from Acquisition import aq_parent
@@ -13,7 +14,7 @@ from zope.component.hooks import setSite
 SITES = ['qiteamspace', 'opip']
 
 
-_tz_cache_key = lambda fn,site: site.getPhysicalPath()
+_tz_cache_key = lambda fn, site: site.getPhysicalPath()
 
 
 @ram.cache(_tz_cache_key)
@@ -46,7 +47,6 @@ def migrate_event(source, site):
         basic = behaviors.IEventBasic(dest)
         recur = behaviors.IEventRecurrence(dest)
         loc = behaviors.IEventLocation(dest)
-        attendees =behaviors. IEventAttendees(dest)
         contact = behaviors.IEventContact(dest)
         summary = behaviors.IEventSummary(dest)
         # default values for fields we will not copy:
@@ -72,14 +72,14 @@ def migrate_event(source, site):
             summary.text = RichTextValue(raw=text.decode('utf-8'))
         dest.reindexObject()
     try:
-        parent_folder.manage_delObjects([evid,])
+        parent_folder.manage_delObjects([evid])
     except LinkIntegrityNotificationException:
         print 'skipped deleting %s for link integrity' % repr(source)
 
 
 def migrate_events(site):
     catalog = site.portal_catalog
-    result = catalog.search({'portal_type':'Event'})
+    result = catalog.search({'portal_type': 'Event'})
     events = [b._unrestrictedGetObject() for b in result]
     for event in events:
         migrate_event(event, site)
@@ -89,6 +89,7 @@ def migrate_events(site):
     txn.note('Migrated events')
     txn.commit()
 
+
 def main(app):
     for sitename in SITES:
         site = app[sitename]
@@ -97,5 +98,5 @@ def main(app):
 
 
 if 'app' in locals():
-    main(app)
+    main(app)  # noqa
 
