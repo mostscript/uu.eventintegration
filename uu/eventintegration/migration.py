@@ -79,7 +79,7 @@ def migrate_event(source, site):
 
 def migrate_events(site):
     catalog = site.portal_catalog
-    result = catalog.search({'portal_type': 'Event'})
+    result = catalog.unrestrictedSearchResults({'portal_type': 'Event'})
     events = [b._unrestrictedGetObject() for b in result]
     for event in events:
         migrate_event(event, site)
