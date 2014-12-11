@@ -15,7 +15,7 @@
   <genericsetup:registerProfile
       name="default"
       directory="profiles/default"
-      title="plone.app.event UPIQ Plone 4.2 integration"
+      title="plone.app.event UPIQ Plone 4.x integration"
       description="Integration of plone.app.event into pre Plone 4.3 release."
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -24,7 +24,7 @@
   <genericsetup:registerProfile
       name="prepare"
       directory="profiles/prepare"
-      title="plone.app.event UPIQ Plone 4.2 preparation profile"
+      title="plone.app.event UPIQ Plone 4.x preparation profile"
       description="Preparation of Integration of plone.app.event into pre Plone 4.3 release. Will be automatically applied by the default profile." 
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       provides="Products.GenericSetup.interfaces.EXTENSION"

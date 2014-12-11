@@ -37,8 +37,11 @@ def patch_ulocalized_time():
 
 
 def patch_widget():
-    from plone.formwidget.datetime.base import AbstractDatetimeWidget
-    AbstractDatetimeWidget.ampm = True
+    try:
+        from plone.formwidget.datetime.base import AbstractDatetimeWidget
+        AbstractDatetimeWidget.ampm = True
+    except ImportError:
+        pass
 
 
 def patch_atct_topic_date_indices():

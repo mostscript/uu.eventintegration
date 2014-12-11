@@ -4,7 +4,6 @@
   <dependencies>
     <dependency>profile-uu.eventintegration:prepare</dependency>
     <dependency>profile-plone.app.event:default</dependency>
-    <dependency>profile-plone.app.event.dx:default</dependency>
     <dependency>profile-Solgema.fullcalendar:default</dependency>
   </dependencies>
 </metadata>

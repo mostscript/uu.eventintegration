@@ -31,13 +31,6 @@
         description=""
         layer="Solgema.fullcalendar.interfaces.ISolgemaFullcalendarLayer"
         />
-    <!-- do not use p.f.datetime widget by default due to current bugs -->
-    <adapter
-        factory="plone.formwidget.datetime.z3cform.widget.DateFieldWidget"
-        />
-    <adapter
-        factory="plone.formwidget.datetime.z3cform.widget.DatetimeFieldWidget"
-        />
   </unconfigure>
 
   <browser:menuItem zcml:condition="have plone-4"
