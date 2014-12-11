@@ -1,6 +1,8 @@
 from plone.dexterity.content import Container
 from zope.interface import implements
 
+from Solgema.fullcalendar.interfaces import ISolgemaFullcalendarProperties
+
 from uu.eventintegration.interfaces import IEventCalendar
 
 
@@ -29,4 +31,7 @@ def on_calendar_create(context, event):
     context.setDefaultPage(topic.getId())
     # finally, use calendar layout for the topic:
     topic.setLayout('solgemafullcalendar_view')
+    # set the add-form FTI portal_type name for events:
+    props = ISolgemaFullcalendarProperties(topic)
+    props.eventType = u'plone.app.event.dx.event'
 
