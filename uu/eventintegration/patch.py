@@ -36,14 +36,6 @@ def patch_ulocalized_time():
     i18nl10n.ulocalized_time = new_ulocalized_time
 
 
-def patch_widget():
-    try:
-        from plone.formwidget.datetime.base import AbstractDatetimeWidget
-        AbstractDatetimeWidget.ampm = True
-    except ImportError:
-        pass
-
-
 def patch_atct_topic_date_indices():
     from Products.ATContentTypes import criteria
     if 'DateRecurringIndex' not in criteria.DATE_INDICES:

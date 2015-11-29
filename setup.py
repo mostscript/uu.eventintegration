@@ -27,6 +27,7 @@ setup(
     install_requires=[
         'setuptools',
         'plone.dexterity',
+        'plone.app.widgets',
         'plone.directives.form',
         'plone.app.event[dexterity]',
         'Solgema.fullcalendar',
