@@ -34,4 +34,11 @@ def on_calendar_create(context, event):
     # set the add-form FTI portal_type name for events:
     props = ISolgemaFullcalendarProperties(topic)
     props.eventType = u'plone.app.event.dx.event'
+    props.firstHour = 6
+    props.minTime = 8
+    props.maxTime = 20
+    props.disableAJAX = True
+    props.caleditable = False
+    props.disableDragging = True
+    props.disableResizing = True
 
