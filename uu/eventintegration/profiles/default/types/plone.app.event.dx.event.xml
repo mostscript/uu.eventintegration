@@ -14,7 +14,7 @@
  <property name="allowed_content_types"/>
 
   <!-- Schema, class and security -->
-  <property name="schema"></property>
+  <property name="schema">uu.eventintegration.interfaces.IEventText</property>
   <property name="klass">plone.dexterity.content.Item</property>
   <property name="add_permission">cmf.AddPortalContent</property>
   <property name="model_source">
@@ -33,7 +33,6 @@
     <element value="plone.app.event.dx.behaviors.IEventLocation"/>
     <element value="plone.app.event.dx.behaviors.IEventAttendees"/>
     <element value="plone.app.event.dx.behaviors.IEventContact"/>
-    <element value="plone.app.contenttypes.behaviors.richtext.IRichText"/>
   </property>
 
   <!-- View and aliases -->
